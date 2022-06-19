@@ -5,10 +5,10 @@ services:
     image: postgres:latest
     environment:
       - POSTGRES_DB=local-postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
     volumes:
       - ./postgres-volume:/var/lib/postgresql/data
-      - ./init-user-db.sh:./docker-entrypoint-initdb.d/init-user-db.sh
+      - ./init-postgres.sh:./docker-entrypoint-initdb.d/init-postgres.sh
     ports:
       - 5432:5432
