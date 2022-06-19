@@ -2,14 +2,14 @@ version: '3.8'
 
 services:
   mongodb:
-    image: 'mongo'
-    container_name: 'local-mongodb-container'
+    image: mongo:latest
+    container_name: local-mongodb-container
     environment:
       - MONGO_INITDB_DATABASE: local-mongodb
       - MONGO_INITDB_ROOT_USERNAME: root
       - MONGO_INITDB_ROOT_PASSWORD: root
     volumes:
-      - ./init-mongo.js:./docker-entrypoint-initdb.d/init-mongo.js:ro
       - ./mongodb-volume:/data/db
+      - ./init-mongo.js:./docker-entrypoint-initdb.d/init-mongo.js:ro
     ports:
       - 27017:27017

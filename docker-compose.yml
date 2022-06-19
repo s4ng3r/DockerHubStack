@@ -4,3 +4,6 @@ services:
   mongodb:
     file: 'databases/mongodb/mongodb.yml'
     service: mongodb
+  postgres:
+    file: 'databases/postgres/postgres.yml'
+    service: postgres
