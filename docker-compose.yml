@@ -1,0 +1,6 @@
+version: '3.8'
+
+services:
+  mongodb:
+    file: '/mongodb/mongodb.yml'
+    service: mongodb
