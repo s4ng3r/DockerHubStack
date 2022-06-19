@@ -1,5 +1,5 @@
 # DockerHubStack
-Pre-configured docker files for local development
+Pre-configured docker compose files for local development.
 
 + Databases: MongoDB, SQL Server, Postgres, Cassandra
 + Cache: Redis, Memcached
