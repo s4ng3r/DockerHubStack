@@ -8,3 +8,6 @@ Pre-configured docker files for local development
 + Test: SonarQube
 + Monitoring: Grafana
 + Logs: Logstash
+
+# License
+[Gerardo.Ob](https://github.com/s4ng3r) © 2022. Released under the [MIT License](https://github.com/doowb/ansi-colors/blob/master/LICENSE).
