@@ -1,9 +1,27 @@
-version: '3.8'
+version: '2.1'
 
 services:
   mongodb:
-    file: 'databases/mongodb/mongodb.yml'
-    service: mongodb
+    extends:
+      file: 'databases/mongodb/mongodb.yml'
+      service: mongodb
   postgres:
-    file: 'databases/postgres/postgres.yml'
-    service: postgres
+    extends:
+      file: 'databases/postgres/postgres.yml'
+      service: postgres
+  zookeeper:
+    extends:
+      file: 'message_broker/kafka/kafka.yml'
+      service: zookeeper
+  kafka-core:
+    extends:
+      file: 'message_broker/kafka/kafka.yml'
+      service: kafka
+    depends_on:
+      - zookeeper
+  kafka:
+    extends:
+      file: 'message_broker/kafka/kafka.yml'
+      service: kafka-ui
+    depends_on:
+      - kafka-core

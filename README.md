@@ -9,7 +9,14 @@ Pre-configured docker compose files for local development.
 + Monitoring: Grafana
 + Logs: Logstash
 
+# Requirement
+
++ [Docker](https://www.docker.com/products/docker-desktop/)
++ [Docker Compose](https://docs.docker.com/compose/install/)
+
 # Quickstart
+
+## Install Images
 
 Run `docker-compose pull` to download all images or `docker-compose pull 'services'` to download only specific images. <br>
 
@@ -33,6 +40,8 @@ docker-compose pull mongodb kafka
 docker-compose pull postgres kafka sonarqube
 ```
 
+## Run Services
+
 Run `docker-compose up 'services'` to run your specific services.<br>
 
 Examples:<br>
@@ -48,11 +57,13 @@ docker-compose up postgres kafka sonarqube
   + `MONGO_INITDB_DATABASE`: local-mongodb
   + `MONGO_INITDB_ROOT_USERNAME`: root
   + `MONGO_INITDB_ROOT_PASSWORD`: root
+  + `PORT`: 27017
 
 + PostgreSQL
   + `POSTGRES_DB`: local-postgres
   + `POSTGRES_USER`: root
   + `POSTGRES_PASSWORD`: root
+  + `PORT`: 5432
 
 # Scripts
 
